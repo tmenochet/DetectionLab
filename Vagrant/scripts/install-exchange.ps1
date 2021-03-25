@@ -9,8 +9,8 @@
 # 5. Once installation is successful, reboot once more. 
 
 $exchangeFolder = "C:\exchange2016"
-$exchangeISOPath = "C:\exchange2016\ExchangeServer2016-x64-cu12.iso"
-$exchangeDownloadUrl = "https://download.microsoft.com/download/2/5/8/258D30CF-CA4C-433A-A618-FB7E6BCC4EEE/ExchangeServer2016-x64-cu12.iso"
+$exchangeISOPath = "C:\exchange2016\ExchangeServer2016-x64-cu11.iso"
+$exchangeDownloadUrl = "https://download.microsoft.com/download/6/6/F/66F70200-E2E8-4E73-88F9-A1F6E3E04650/ExchangeServer2016-x64-cu11.iso"
 $username = 'windomain.local\administrator'
 $password = 'vagrant'
 $securePassword = ConvertTo-SecureString $password -AsPlainText -Force
