@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-# This script is used to manually prepare an Ubuntu 16.04 server for DetectionLab building
+# This script is used to manually prepare an Ubuntu 18.04 server for DetectionLab building
 export DEBIAN_FRONTEND=noninteractive
 sed -i 's/archive.ubuntu.com/us.archive.ubuntu.com/g' /etc/apt/sources.list
 
@@ -25,8 +25,8 @@ git clone https://github.com/clong/DetectionLab.git /opt/DetectionLab
 # Install Vagrant
 mkdir /opt/vagrant
 cd /opt/vagrant || exit 1
-wget https://releases.hashicorp.com/vagrant/2.2.14/vagrant_2.2.14_x86_64.deb
-dpkg -i vagrant_2.2.14_x86_64.deb
+wget https://releases.hashicorp.com/vagrant/2.2.16/vagrant_2.2.16_x86_64.deb
+dpkg -i vagrant_2.2.16_x86_64.deb
 
 # Disable IPv6 - may help with the vagrant-reload plugin: https://github.com/hashicorp/vagrant/issues/8795#issuecomment-468945063
 echo "net.ipv6.conf.all.disable_ipv6=1" >> /etc/sysctl.conf
@@ -36,6 +36,9 @@ vagrant plugin install vagrant-reload
 # Make the Vagrant instances headless
 cd /opt/DetectionLab/Vagrant || exit 1
 sed -i 's/vb.gui = true/vb.gui = false/g' Vagrantfile
+cd /opt/DetectionLab/Vagrant/Exchange || exit 1
+sed -i 's/vb.gui = true/vb.gui = false/g' Vagrantfile
+cd /opt/DetectionLab/Vagrant || exit 1
 
 # Install Packer
 mkdir /opt/packer

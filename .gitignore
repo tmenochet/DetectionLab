@@ -1,4 +1,3 @@
-Azure/Ansible/inventory.yml
 Vagrant/.vagrant/*
 Vagrant/vagrant*.log
 Packer/packer_cache/*
@@ -9,8 +8,10 @@ Boxes/*
 *.tfstate
 *.tfstate.*
 *.tfvars
-inventory.yml
+ESXi/Ansible/inventory.yml
+Azure/Ansible/inventory.yml
 inventory.yml.bak
+inventory.yml
 *.box
 manifest.xml
 HyperV/.vagrant/*
