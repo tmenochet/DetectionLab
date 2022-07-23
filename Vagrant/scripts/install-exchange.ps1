@@ -32,7 +32,7 @@ Else {
   Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) [+] The Exchange ISO was already downloaded. Moving On."
 }
 
-If (!(Get-Volume | Where DriveType -eq "CD-ROM").filesystemlabel -eq "EXCHANGESERVER2016-X64-CU12") {
+If (!(Get-Volume | Where DriveType -eq "CD-ROM").filesystemlabel -eq "EXCHANGESERVER2016-X64-CU11") {
   Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) The Exchange ISO doesn't appear to be mounted."
   Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) Mounting the Exchange 2016 ISO..."
   Try {
@@ -48,7 +48,7 @@ If (!(Get-Volume | Where DriveType -eq "CD-ROM").filesystemlabel -eq "EXCHANGESE
 }
 Else {
   Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) The exchange ISO appears to already be mounted"
-  $Volume = (Get-Volume | Where FileSystemLabel -eq "EXCHANGESERVER2016-X64-CU12")
+  $Volume = (Get-Volume | Where FileSystemLabel -eq "EXCHANGESERVER2016-X64-CU11")
 }
 
 Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) Beginning installation of Exchange 2016..."
