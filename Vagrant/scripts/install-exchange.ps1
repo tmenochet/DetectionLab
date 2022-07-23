@@ -5,8 +5,8 @@ $password = 'vagrant'
 $securePassword = ConvertTo-SecureString $password -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential $username, $securePassword
 $exchangeFolder = "C:\exchange2016"
-$exchangeISOPath = "C:\exchange2016\ExchangeServer2016-x64-cu12.iso"
-$exchangeDownloadUrl = "https://download.microsoft.com/download/2/5/8/258D30CF-CA4C-433A-A618-FB7E6BCC4EEE/ExchangeServer2016-x64-cu12.iso"
+$exchangeISOPath = "C:\exchange2016\ExchangeServer2016-x64-cu11.iso"
+$exchangeDownloadUrl = "https://download.microsoft.com/download/6/6/F/66F70200-E2E8-4E73-88F9-A1F6E3E04650/ExchangeServer2016-x64-cu11.iso"
 
 If (Test-Path c:\exchange_prereqs_complete.txt) {
   Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) [+] It appears the Exchange prerequisites have been installed already. Continuing installation..."
